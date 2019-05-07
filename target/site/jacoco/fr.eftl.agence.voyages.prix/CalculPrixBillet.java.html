@@ -2,38 +2,41 @@
 
 <span class="fc" id="L3">public class CalculPrixBillet {</span>
 	
+	private CalculPrixUnitaire calculPrixUnitaire;
 	private Integer prixUnitaire;
-	private String classe;
 	
 	public Integer getPrixUnitaire() {
-<span class="nc" id="L9">		return prixUnitaire;</span>
+<span class="fc" id="L9">		return prixUnitaire;</span>
 	}
 	public void setPrixUnitaire(Integer prixUnitaire) {
-<span class="nc" id="L12">		this.prixUnitaire = prixUnitaire;</span>
-<span class="nc" id="L13">	}</span>
-	public String getClasse() {
-<span class="nc" id="L15">		return classe;</span>
-	}
-	public void setClasse(String classe) {
-<span class="nc" id="L18">		this.classe = classe;</span>
-<span class="nc" id="L19">	}</span>
-	
+<span class="fc" id="L12">		this.prixUnitaire = prixUnitaire;</span>
+<span class="fc" id="L13">	}</span>
+
+
 	public Integer calculer(String depart,String arrivee, String classe) {
-<span class="fc" id="L22">		CalculPrixUnitaire prixUnitaire = new CalculPrixUnitaire(depart, arrivee);</span>
-<span class="fc" id="L23">		Integer varPrixUnitaire = prixUnitaire.generer();</span>
-<span class="pc bpc" id="L24" title="3 of 4 branches missed.">		switch(classe) {</span>
+<span class="fc" id="L17">		calculPrixUnitaire.setDepart(depart);</span>
+<span class="fc" id="L18">		calculPrixUnitaire.setArrivee(arrivee);	</span>
+<span class="fc" id="L19">		this.setPrixUnitaire(calculPrixUnitaire.generer());</span>
+<span class="fc" id="L20">		Integer varPrixUnitaire = this.getPrixUnitaire();</span>
+<span class="fc" id="L21">		Integer varPrixBillet=0;</span>
+<span class="fc bfc" id="L22" title="All 4 branches covered.">		switch(classe) {</span>
 		case &quot;eco&quot;:
-<span class="fc" id="L26">			return varPrixUnitaire;</span>
+<span class="fc" id="L24">			varPrixBillet= varPrixUnitaire;</span>
+<span class="fc" id="L25">			break;</span>
 		case &quot;premiere&quot;:
-<span class="nc" id="L28">			return varPrixUnitaire * 2;</span>
+<span class="fc" id="L27">			varPrixBillet=  varPrixUnitaire * 2;</span>
+<span class="fc" id="L28">			break;</span>
 		case &quot;business&quot;:
-<span class="nc" id="L30">			return varPrixUnitaire * 2 + 300;</span>
-		default:
-<span class="nc" id="L32">			return varPrixUnitaire;</span>
+<span class="fc" id="L30">			varPrixBillet=  varPrixUnitaire * 2 + 300;</span>
+			break;
 		}
-		
+<span class="fc" id="L33">		return varPrixBillet;</span>
 		
 	}
+
+	public void setCalculPrixUnitaire(CalculPrixUnitaire calculPrixUnitaire) {
+<span class="fc" id="L38">		this.calculPrixUnitaire = calculPrixUnitaire;</span>
+<span class="fc" id="L39">	}</span>
 	
 
 }

@@ -4,13 +4,33 @@ public class CalculPrixUnitaire {
 	private String depart;
 	private String arrivee;
 	
-<span class="fc" id="L7">	public CalculPrixUnitaire(String depart, String arrivee) {</span>
-<span class="fc" id="L8">		this.depart=depart;</span>
-<span class="fc" id="L9">		this.arrivee=arrivee;</span>
-<span class="fc" id="L10">	}</span>
+<span class="nc" id="L7">	public CalculPrixUnitaire(String depart, String arrivee) {</span>
+<span class="nc" id="L8">		this.setDepart(depart);</span>
+<span class="nc" id="L9">		this.setArrivee(arrivee);</span>
+<span class="nc" id="L10">	}</span>
 	
+<span class="nc" id="L12">	public CalculPrixUnitaire() {</span>
+		// TODO Auto-generated constructor stub
+<span class="nc" id="L14">	}</span>
+
 	public Integer generer() {
-<span class="fc" id="L13">		return null;</span>
+<span class="nc" id="L17">		return null;</span>
 	}
+
+	public String getDepart() {
+<span class="nc" id="L21">		return depart;</span>
+	}
+
+	public void setDepart(String depart) {
+<span class="nc" id="L25">		this.depart = depart;</span>
+<span class="nc" id="L26">	}</span>
+
+	public String getArrivee() {
+<span class="nc" id="L29">		return arrivee;</span>
+	}
+
+	public void setArrivee(String arrivee) {
+<span class="nc" id="L33">		this.arrivee = arrivee;</span>
+<span class="nc" id="L34">	}</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>
